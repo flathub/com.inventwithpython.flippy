@@ -31,7 +31,7 @@
 
   <screenshots>
     <screenshot type="default">
-      <image type="source">https://inventwithpython.com/images/flippy_screenshot.png</image>
+      <image type="source">https://raw.githubusercontent.com/flathub/com.inventwithpython.flippy/master/screenshot.png</image>
     </screenshot>
   </screenshots>
 
