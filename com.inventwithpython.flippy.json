@@ -9,7 +9,7 @@
     ],
     "modules": [
         "shared-modules/python2.7/python-2.7.json",
-        "shared-modules/pygame/pygame-1.9.3.json",
+        "shared-modules/pygame/pygame-1.9.4.json",
         {
             "name": "flippy",
             "buildsystem": "simple",
