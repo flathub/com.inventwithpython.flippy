@@ -5,7 +5,8 @@
     "runtime-version": "20.08",
     "command": "/app/bin/flippy",
     "finish-args": [
-       "--socket=x11"
+       "--socket=x11",
+       "--share=ipc"
     ],
     "modules": [
         "shared-modules/python2.7/python-2.7.json",
