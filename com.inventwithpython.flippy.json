@@ -2,7 +2,7 @@
     "id": "com.inventwithpython.flippy",
     "runtime": "org.freedesktop.Platform",
     "sdk": "org.freedesktop.Sdk",
-    "runtime-version": "18.08",
+    "runtime-version": "20.08",
     "command": "/app/bin/flippy",
     "finish-args": [
        "--socket=x11"
