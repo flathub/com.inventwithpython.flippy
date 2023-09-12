@@ -2,15 +2,14 @@
     "id": "com.inventwithpython.flippy",
     "runtime": "org.freedesktop.Platform",
     "sdk": "org.freedesktop.Sdk",
-    "runtime-version": "20.08",
-    "command": "/app/bin/flippy",
+    "runtime-version": "23.08",
+    "command": "flippy",
     "finish-args": [
        "--socket=x11",
        "--share=ipc"
     ],
     "modules": [
-        "shared-modules/python2.7/python-2.7.json",
-        "shared-modules/pygame/pygame-1.9.4.json",
+        "shared-modules/pygame/pygame-1.9.6.json",
         {
             "name": "flippy",
             "buildsystem": "simple",
