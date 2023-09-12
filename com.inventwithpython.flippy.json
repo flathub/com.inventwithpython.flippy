@@ -9,18 +9,6 @@
        "--share=ipc"
     ],
     "modules": [
-        "shared-modules/python2.7/python-2.7.json",
-        {
-            "name": "python2-cython",
-            "buildsystem": "simple",
-            "build-commands": ["pip2 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"cython\" --no-build-isolation"],
-            "sources": [{
-                "type": "file",
-                "url": "https://files.pythonhosted.org/packages/3f/d6/9eed523aeaca42acbaa3e6d3850edae780dc7f8da9df1bf6a2ceb851839c/Cython-0.29.36-py2.py3-none-any.whl",
-                "sha256": "95bb13d8be507425d03ebe051f90d4b2a9fdccc64e4f30b35645fdb7542742eb"
-            }],
-            "cleanup": ["*"]
-        },
         "shared-modules/pygame/pygame-1.9.6.json",
         {
             "name": "flippy",
