@@ -2,14 +2,60 @@
     "id": "com.inventwithpython.flippy",
     "runtime": "org.freedesktop.Platform",
     "sdk": "org.freedesktop.Sdk",
-    "runtime-version": "23.08",
+    "runtime-version": "26.08",
     "command": "flippy",
     "finish-args": [
        "--socket=x11",
        "--share=ipc"
     ],
     "modules": [
-        "shared-modules/pygame/pygame-1.9.6.json",
+        "shared-modules/SDL2/SDL2_ttf.json",
+        "shared-modules/SDL2/SDL2_image.json",
+        "shared-modules/SDL2/SDL2_mixer.json",
+        {
+            "name": "portmidi",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY:STRING=/app/lib",
+                "-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY:STRING=/app/lib",
+                "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY:STRING=/app/bin"
+            ],
+            "cleanup": [
+                "/include",
+                "/lib/pkgconfig",
+                "/share/man",
+                "*.la",
+                "*.a"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/PortMidi/portmidi/archive/refs/tags/v2.0.8.tar.gz",
+                    "sha256": "f21201d4cc233638d7bb6ee29ee6dece54f6c9c1aeb7989bc978001caaf2f666"
+                }
+            ]
+        },
+        "python3-meson-python.json",
+        {
+            "name": "pygame",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip install -v --no-build-isolation --prefix=/app --root=/ ."
+            ],
+            "cleanup": [
+                "/include",
+                "/lib/pkgconfig",
+                "/share/man",
+                "*.la",
+                "*.a"
+            ],
+            "sources": [{
+                "type": "archive",
+                "url": "https://files.pythonhosted.org/packages/26/2d/0f942ec31d558a6a1f2fd0df9965ff0055f165ed5b8d36f6509b1f3768a2/pygame_ce-2.5.8.tar.gz",
+                "sha256": "3c8e69088ead310037972c391306ea58e74d7296b35d1890067749235fd554ba"
+            }]
+        },
         {
             "name": "flippy",
             "buildsystem": "simple",
