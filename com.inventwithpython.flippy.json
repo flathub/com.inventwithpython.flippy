@@ -5,8 +5,10 @@
     "runtime-version": "26.08",
     "command": "flippy",
     "finish-args": [
-       "--socket=x11",
-       "--share=ipc"
+       "--socket=wayland",
+       "--socket=fallback-x11",
+       "--share=ipc",
+       "--device=dri"
     ],
     "modules": [
         "shared-modules/SDL2/SDL2_ttf.json",
